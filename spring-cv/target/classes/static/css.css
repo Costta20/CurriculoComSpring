@@ -1,0 +1,9 @@
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    background-color: red;
+}
+

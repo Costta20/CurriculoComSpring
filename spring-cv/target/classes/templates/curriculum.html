@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curriculum Vitae</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500&family=Lora&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <h1 th:text="${curriculo.nome + ' ' + curriculo.sobrenome}"></h1>
+            <h3 th:text="'Idade: ' + ${curriculo.idade}"></h3>
+            <h3 th:text="'Nascimento: ' + ${curriculo.dataNascimento}"></h3>
+            <h3 th:text="'Telefone celular: ' + ${curriculo.telCelular}"></h3>
+            <h3 th:text="'Linkedin: ' + ${curriculo.linkedin}"></h3>
+            <h3 th:text="'Github: ' + ${curriculo.github}"></h3>
+            
+            <br><h2>Conhhecimentos</h2>
+            <th:block th:each="conhecimento : ${curriculo.conhecimentos}">
+                <h3 th:text="${conhecimento}"></h3>
+            </th:block>
+            
+            <br><h2>Experiência profissional</h2>
+            <th:block th:each="exp : ${curriculo.experiencias}">
+                <h3 th:text="${exp}"></h3>
+            </th:block>
+            
+            <br><h2>Formação</h2>
+            <th:block th:each="esc : ${curriculo.escolaridade}">
+                <h3 th:text="${esc}"></h3>
+            </th:block>
+            
+            <br><h2>Idiomas</h2>
+            <th:block th:each="idioma : ${curriculo.idiomas}">
+                <h3 th:text="${idioma}"></h3>
+            </th:block>
+            
+        </div>
+    </body>
+</html>
